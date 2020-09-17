@@ -6,15 +6,13 @@ public class Task001Impl implements Task001 {
         return firstNumber == null || firstNumber.isEmpty() || secondNumber == null || secondNumber.isEmpty();
     }
 
-    private static boolean checkConvert (String firstNumber, String secondNumber) {
-        boolean b = true;
+    private static boolean checkConvert (String number) {
         try {
-            Double.parseDouble(firstNumber);
-            Double.parseDouble(secondNumber);
+            Double.parseDouble(number);
+            return true;
         } catch (Exception e) {
-            b = true;
+            return false;
         }
-        return b;
     }
 
     @Override
@@ -22,8 +20,8 @@ public class Task001Impl implements Task001 {
         if (checkInput(firstNumber, secondNumber)) {
             throw new IllegalArgumentException("input parameters are not set");
         }
-        else if (!checkConvert(firstNumber, secondNumber)) {
-            throw new IllegalArgumentException("can't convert input values to numbers");
+        if (!checkConvert(firstNumber) || !checkConvert(secondNumber)) {
+            throw new NumberFormatException("can't convert input values to numbers");
         }
         else {
             return Double.parseDouble(firstNumber) + Double.parseDouble(secondNumber);
@@ -35,8 +33,8 @@ public class Task001Impl implements Task001 {
         if (checkInput(firstNumber, secondNumber)) {
             throw new IllegalArgumentException("input parameters are not set");
         }
-        else if (!checkConvert(firstNumber, secondNumber)) {
-            throw new IllegalArgumentException("can't convert input values to numbers");
+        if (!checkConvert(firstNumber) || !checkConvert(secondNumber)) {
+            throw new NumberFormatException("can't convert input values to numbers");
         }
         else {
             return Double.parseDouble(firstNumber) - Double.parseDouble(secondNumber);
@@ -48,8 +46,8 @@ public class Task001Impl implements Task001 {
         if (checkInput(firstNumber, secondNumber)) {
             throw new IllegalArgumentException("input parameters are not set");
         }
-        else if (!checkConvert(firstNumber, secondNumber)) {
-            throw new IllegalArgumentException("can't convert input values to numbers");
+        if (!checkConvert(firstNumber) || !checkConvert(secondNumber)) {
+            throw new NumberFormatException("can't convert input values to numbers");
         }
         else {
             return Double.parseDouble(firstNumber) * Double.parseDouble(secondNumber);
@@ -61,8 +59,8 @@ public class Task001Impl implements Task001 {
         if (checkInput(firstNumber, secondNumber)) {
             throw new IllegalArgumentException("input parameters are not set");
         }
-        else if (!checkConvert(firstNumber, secondNumber)) {
-            throw new IllegalArgumentException("can't convert input values to numbers");
+        else if (!checkConvert(firstNumber) || !checkConvert(secondNumber)) {
+            throw new NumberFormatException("can't convert input values to numbers");
         }
         if (Double.parseDouble(firstNumber) == 0 && Double.parseDouble(secondNumber) == 0) {
             return Double.NaN;
