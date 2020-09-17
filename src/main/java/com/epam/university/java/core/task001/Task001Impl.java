@@ -23,9 +23,7 @@ public class Task001Impl implements Task001 {
         if (!checkConvert(firstNumber) || !checkConvert(secondNumber)) {
             throw new NumberFormatException("can't convert input values to numbers");
         }
-        else {
-            return Double.parseDouble(firstNumber) + Double.parseDouble(secondNumber);
-        }
+        return Double.parseDouble(firstNumber) + Double.parseDouble(secondNumber);
     }
 
     @Override
@@ -36,9 +34,7 @@ public class Task001Impl implements Task001 {
         if (!checkConvert(firstNumber) || !checkConvert(secondNumber)) {
             throw new NumberFormatException("can't convert input values to numbers");
         }
-        else {
-            return Double.parseDouble(firstNumber) - Double.parseDouble(secondNumber);
-        }
+        return Double.parseDouble(firstNumber) - Double.parseDouble(secondNumber);
     }
 
     @Override
@@ -49,9 +45,7 @@ public class Task001Impl implements Task001 {
         if (!checkConvert(firstNumber) || !checkConvert(secondNumber)) {
             throw new NumberFormatException("can't convert input values to numbers");
         }
-        else {
-            return Double.parseDouble(firstNumber) * Double.parseDouble(secondNumber);
-        }
+        return Double.parseDouble(firstNumber) * Double.parseDouble(secondNumber);
     }
 
     @Override
@@ -59,7 +53,7 @@ public class Task001Impl implements Task001 {
         if (checkInput(firstNumber, secondNumber)) {
             throw new IllegalArgumentException("input parameters are not set");
         }
-        else if (!checkConvert(firstNumber) || !checkConvert(secondNumber)) {
+        if (!checkConvert(firstNumber) || !checkConvert(secondNumber)) {
             throw new NumberFormatException("can't convert input values to numbers");
         }
         if (Double.parseDouble(firstNumber) == 0 && Double.parseDouble(secondNumber) == 0) {
